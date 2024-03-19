@@ -63,7 +63,7 @@ ol {
 .result {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 16px;
 }
 .result__video-container {
   position: relative;
@@ -77,22 +77,20 @@ ol {
   object-position: center;
 }
 .search-form {
-  margin-bottom: 3px;
   display: flex;
-  align-items: end;
   justify-content: space-between;
+  gap: 38px;
 }
 .search-form__fieldset {
-  border: hidden;
-  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: none;
 }
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
   font-weight: 400;
-  line-height: 22px;
+  font-size: 18px;
   color: var(--white);
-  padding-bottom: 10px;
 }
 .search-form__label {
   display: flex;
@@ -118,7 +116,7 @@ ol {
   color: var(--white);
 }
 .search-form__textfield::placeholder {
-  color: var(--gray);
+  color: var(--white);
 }
 .search-form__textfield:active {
   border-right: 1px solid var(--white);
@@ -132,8 +130,7 @@ ol {
   display: flex;
   gap: 15px;
 }
-.search-form__checkbox {
-}
+
 .search-form__pseudo-checkbox {
   justify-self: center;
   align-self: center;
@@ -154,13 +151,10 @@ ol {
   outline: 1px solid var(--white);
   outline-offset: 1px;
 }
-.search-form__textfield::placeholder {
-  color: var(--white);
-}
-.search-form__textfield:focus-visible {
-  outline: 1px solid var(--white);
-  border: 1px solid var(--white);
-  outline-offset: 1px;
+
+.search-form__submit-button {
+  width: 194px;
+  align-self: end;
 }
 
 .button {
@@ -191,9 +185,6 @@ ol {
 .button:active {
   background: var(--gray);
 }
-.search-form__submit-button {
-  width: 194px;
-}
 .content__details {
   display: flex;
   flex-direction: column;
@@ -213,7 +204,6 @@ ol {
 .content__list {
   position: relative;
   overflow-y: auto;
-  overflow-x: hidden;
   height: 298px;
   gap: 30px;
   display: flex;
@@ -224,9 +214,6 @@ ol {
   height: 0;
 }
 
-.content__list-item {
-  padding-bottom: 32px;
-}
 .content__list-item:has(.content__card-link_current) {
   background-color: var(--gray);
 }
@@ -258,26 +245,35 @@ ol {
 .content__video-card:active {
   background-color: var(--gray);
 }
-
-.content__video-card-description-container {
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 16.2px;
-}
 .content__video-card-title {
-  font-family: Oswald;
-  font-size: 30px;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
+  font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
+  margin-top: 3px;
 }
 
+.content__video-card-description-container {
+  flex-grow: 1;
+  max-width: 200px;
+  color: #fff;
+}
+.content__video-card-description {
+  padding-top: 6px;
+  font-weight: 400;
+  line-height: 90%;
+}
 .content__video-card-thumbnail {
+  flex-shrink: 0;
+  align-self: end;
   width: 194px;
-  height: 109px;
+  height: 103px;
   object-fit: cover;
   object-position: center;
+}
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .more-button {
